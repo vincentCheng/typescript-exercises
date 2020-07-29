@@ -1,4 +1,5 @@
-import chalk from 'chalk';
+import chalk from 'chalk'
+import { type } from 'os'
 
 /*
 
@@ -26,25 +27,31 @@ Run this exercise:
 
 */
 
-const users: unknown[] = [
-    {
-        name: 'Max Mustermann',
-        age: 25,
-        occupation: 'Chimney sweep'
-    },
-    {
-        name: 'Kate Müller',
-        age: 23,
-        occupation: 'Astronaut'
-    }
-];
-
-function logPerson(user: unknown) {
-    console.log(` - ${chalk.green(user.name)}, ${user.age}`);
+type user = {
+  name: string
+  age: number
+  occupation: string
 }
 
-console.log(chalk.yellow('Users:'));
-users.forEach(logPerson);
+const users: user[] = [
+  {
+    name: 'Max Mustermann',
+    age: 25,
+    occupation: 'Chimney sweep',
+  },
+  {
+    name: 'Kate Müller',
+    age: 23,
+    occupation: 'Astronaut',
+  },
+]
+
+function logPerson(user: user) {
+  console.log(` - ${chalk.blue(user.name)}, ${user.age}`)
+}
+
+console.log(chalk.yellow('Users:'))
+users.forEach(logPerson)
 
 // In case if you are stuck:
 // https://www.typescriptlang.org/docs/handbook/interfaces.html#introduction
